@@ -160,6 +160,14 @@ body {
   background: rgba(0, 0, 0, 0.4);
 }
 
+.input-hint {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  opacity: 0.8;
+}
+
 .input-group select {
   cursor: pointer;
   appearance: none;
@@ -445,16 +453,8 @@ body {
 
 /* Admin Link */
 .admin-link {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.5rem 1.25rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
+ opacity: 0;
+ cursor: auto; 
 }
 
 .admin-link:hover {

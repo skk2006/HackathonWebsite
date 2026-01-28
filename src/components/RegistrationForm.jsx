@@ -5,16 +5,11 @@ import { sendConfirmationEmail } from '../services/emailService'
 import './RegistrationForm.css'
 
 const problemStatements = [
-    "AI-powered Mental Health Support System for Students",
-    "Smart Traffic Management System using IoT",
-    "Blockchain-based Voting System for Elections",
-    "Sustainable Waste Management Platform",
-    "Real-time Disaster Alert and Response System",
-    "Smart Agriculture Monitoring with Machine Learning",
-    "Healthcare Appointment Scheduling with AI Triage",
-    "Carbon Footprint Tracker for Individuals",
-    "Accessible Education Platform for Differently-abled",
-    "Community Safety Network with Emergency Response"
+    "HealthCare",
+    "Disaster Management",
+    "Edu Tech",
+    "Smart Cities",
+    "Energy Resource Management"
 ]
 
 function RegistrationForm() {
@@ -28,7 +23,8 @@ function RegistrationForm() {
         teamSize: 1,
         teamMembers: [{ name: '', email: '', phone: '', gender: '' }],
         selectedProblem: '',
-        upiTransactionId: ''
+        upiTransactionId: '',
+        pptLink: ''
     })
 
     const [submitted, setSubmitted] = useState(false)
@@ -130,7 +126,8 @@ function RegistrationForm() {
                             teamSize: 1,
                             teamMembers: [{ name: '', email: '', phone: '', gender: '' }],
                             selectedProblem: '',
-                            upiTransactionId: ''
+                            upiTransactionId: '',
+                            pptLink: ''
                         })
                     }} className="btn-primary">
                         Register Another Team
@@ -346,37 +343,31 @@ function RegistrationForm() {
                         </div>
                     </section>
 
-                    {/* Payment Section */}
-                    <section className="form-section payment-section">
+                    {/* PPT Google Drive Link Section */}
+                    <section className="form-section">
                         <h2 className="section-title">
-                            <span className="section-icon">💳</span>
-                            Payment Details
+                            <span className="section-icon">📊</span>
+                            PPT Submission
                         </h2>
-
-                        <div className="qr-container">
-                            <img src="/qr-code.jpg" alt="UPI QR Code for Payment" className="qr-image" />
-                            <p className="qr-note">
-                                <span className="note-icon">📱</span>
-                                Scan the QR code to make payment
-                            </p>
-                            <p className="qr-warning">
-                                <strong>⚠️ Note:</strong> If the QR is not working, try using mobile no <strong>+91 6380290078</strong>
-                            </p>
-                        </div>
+                        <p className="section-description">Share your presentation via Google Drive link:</p>
 
                         <div className="input-group">
-                            <label htmlFor="upiTransactionId">UPI Transaction ID *</label>
+                            <label htmlFor="pptLink">PPT Google Drive Link *</label>
                             <input
-                                type="text"
-                                id="upiTransactionId"
-                                name="upiTransactionId"
-                                value={formData.upiTransactionId}
+                                type="url"
+                                id="pptLink"
+                                name="pptLink"
+                                value={formData.pptLink}
                                 onChange={handleInputChange}
-                                placeholder="Enter UPI Transaction ID after payment"
+                                placeholder="https://drive.google.com/..."
                                 required
                             />
+                            <small className="input-hint">Make sure your Google Drive link is set to "Anyone with the link can view"</small>
                         </div>
                     </section>
+
+                    {/* Payment Section */}
+
 
                     <button type="submit" className="btn-submit" disabled={isSubmitting}>
                         <span>{isSubmitting ? '⌛' : '🎯'}</span>

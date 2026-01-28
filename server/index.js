@@ -78,11 +78,11 @@ app.post('/api/send-email', async (req, res) => {
                 <div class="container">
                     <div class="header">
                         <h1>🎉 Registration Confirmed!</h1>
-                        <p>Welcome to the Hackathon</p>
+                        <p>Welcome to the AI HACKFEST</p>
                     </div>
                     <div class="content">
                         <div style="text-align: center;">
-                            <span class="success-badge">✓ Successfully Registered</span>
+                            <span class="success-badge">✓ ThankYou for registering </span>
                         </div>
                         
                         <p>Dear <strong>${name}</strong>,</p>
